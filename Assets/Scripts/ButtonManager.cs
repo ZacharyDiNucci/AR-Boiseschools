@@ -6,6 +6,7 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour {
     public bool buttonPressed;
     public string objectName;
+    public int HomeScene;
 
     public void ButtonPress(string name) {
         switch (name) {
@@ -18,6 +19,6 @@ public class ButtonManager : MonoBehaviour {
                 Menu.ChangeStartingPage("Login");
                 break;
         }
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(HomeScene);
     }
 }
