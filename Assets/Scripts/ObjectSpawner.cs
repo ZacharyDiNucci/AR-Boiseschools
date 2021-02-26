@@ -37,7 +37,7 @@ public class ObjectSpawner : MonoBehaviour
     bool spwnd = false;
     int person = 0;
     int[] targetArray = new int[11];
-    Menu menu = new Menu();
+    //Menu menu = new Menu();
     // Start is called before the first frame update
     void Start()
     {
