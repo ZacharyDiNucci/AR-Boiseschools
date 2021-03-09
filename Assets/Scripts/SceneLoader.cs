@@ -53,10 +53,10 @@ public class SceneLoader : MonoBehaviour
                 SceneManager.LoadScene(ARScene1);
                 break;
             case "ARGame2":
-                SceneManager.LoadScene(ARScene1);
+                SceneManager.LoadScene(ARScene2);
                 break;
             case "ARGame3":
-                SceneManager.LoadScene(ARScene1);
+                SceneManager.LoadScene(ARScene3);
                 break;
         }
         currentScene.SetActive(true);

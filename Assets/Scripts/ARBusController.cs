@@ -60,21 +60,27 @@ public class ARBusController : MonoBehaviour
                 busCounter++;
                 break;
             case 1:
-                instuctionText.text = "Get on the bus and stand in the new zone";
-                busCounter++;
-                Bus.SetActive(true);
-                Zone1.SetActive(false);
-                Zone2.SetActive(true);
+
+                    instuctionText.text = "Get on the bus and stand in the new zone";
+                    busCounter++;
+                    Bus.SetActive(true);
+                    Zone1.SetActive(false);
+                    Zone2.SetActive(true);
+                
                 break;
             case 2:
-                instuctionText.text = "Here you will pay for your ride, tap advance to pay for it";
-                busCounter++;
+
+                    instuctionText.text = "Here you will pay for your ride, tap advance to pay for it";
+                    busCounter++;
+                
                 break;
             case 3:
+
                 instuctionText.text = "Now move to the empty seat.";
                 Zone2.SetActive(false);
                 Zone3.SetActive(true);
                 busCounter++;
+                
                 break;
             case 4:
                 instuctionText.text = "When you are near your stop signal the driver";
@@ -85,7 +91,7 @@ public class ARBusController : MonoBehaviour
                 busCounter++;
                 break;
             case 6:
-                instuctionText.text = "Tap Advance to end the game";
+                instuctionText.text = "Tap Advance to end the Activity";
                 busCounter++;
                 break;
             case 7:
