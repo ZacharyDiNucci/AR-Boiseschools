@@ -699,10 +699,10 @@ GameObject:
   m_Component:
   - component: {fileID: 675166634}
   - component: {fileID: 675166630}
-  - component: {fileID: 675166633}
   - component: {fileID: 675166632}
   - component: {fileID: 675166631}
   - component: {fileID: 675166635}
+  - component: {fileID: 675166636}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -767,8 +767,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
-  m_UseCustomRendererAsset: 0
-  m_CustomRendererAsset: {fileID: 0}
 --- !u!114 &675166632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,24 +781,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FocusMode: 1
   m_LightEstimationMode: 0
---- !u!114 &675166633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675166629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Device: 0
-  m_PoseSource: 6
-  m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
-  m_UpdateType: 0
-  m_UseRelativeTransform: 1
 --- !u!4 &675166634
 Transform:
   m_ObjectHideFlags: 0
@@ -837,6 +817,18 @@ MonoBehaviour:
     type: 3}
   childFemale: {fileID: 5827049091586693015, guid: cb65d2cadd086174ca5f08dfe0779d13,
     type: 3}
+--- !u!114 &675166636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675166629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3c44306fb1e439a9f18b2212b8ab70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPressed: 0
   objectName: 
+  HomeScene: 0
 --- !u!4 &830148004
 Transform:
   m_ObjectHideFlags: 0
@@ -1387,7 +1380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &969094097
 Transform:
   m_ObjectHideFlags: 0
@@ -2486,6 +2479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AttemptUpdate: 1
+  m_MatchFrameRate: 1
 --- !u!4 &1928140505
 Transform:
   m_ObjectHideFlags: 0
