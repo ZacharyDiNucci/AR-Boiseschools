@@ -811,6 +811,7 @@ MonoBehaviour:
   distanceText: {fileID: 1352013189}
   knownText: {fileID: 877378863}
   scoreText: {fileID: 979087971}
+  debugText: {fileID: 0}
   GamePage: {fileID: 969094096}
   ScorePage: {fileID: 1749015087}
   childMale: {fileID: 2599794382769941530, guid: 087038e6567e0cd41af4f586b965360c,

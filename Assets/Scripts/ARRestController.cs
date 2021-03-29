@@ -22,6 +22,7 @@ public class ARRestController : MonoBehaviour
     public GameObject Food;
     public GameObject NapkinU;
     public GameObject NapkinW;
+    public GameObject Menu;
     bool spawned = false;
     private ARTaptoPlaceObject placementIndicator;
     int restCounter = 0;
@@ -51,8 +52,8 @@ public class ARRestController : MonoBehaviour
                 Zone1.SetActive(false);
                 break;
             case 2:
+                Menu.SetActive(true);
                 instuctionText.text = "Here is Your Waiter, Tap what you would like on the menu";
-                restCounter++;
                 WaiterF.SetActive(true);
                 break;
             case 3:
@@ -91,6 +92,13 @@ public class ARRestController : MonoBehaviour
         }
         Debug.Log(restCounter);
     }
+    
+    public void OrderFood(){
+        Menu.SetActive(false);
+        restCounter++;
+        instuctionText.text = "Tap Advance to Continue";
+    }
+
     public void placeObject(){
         if (spawned != true){
             obj = Instantiate(RestController, placementIndicator.transform.position, placementIndicator.transform.rotation);

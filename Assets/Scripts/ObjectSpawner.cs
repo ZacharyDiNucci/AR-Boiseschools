@@ -21,7 +21,6 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField]
     private Text scoreText;
 
-
     public GameObject GamePage;
     public GameObject ScorePage;
     private double distance;
@@ -66,6 +65,7 @@ public class ObjectSpawner : MonoBehaviour
 
     public void placeObject(){
         if (spawned != true){
+            
         //System.Random rnd = new System.Random();
             if(targetArray.Length >= 1){
                 var last = targetArray.Last();
@@ -74,28 +74,28 @@ public class ObjectSpawner : MonoBehaviour
                     GameObject obj = Instantiate(childMale, placementIndicator.transform.position, placementIndicator.transform.rotation);
                     knownText.text = "He is your Friend";
                     target = obj;
-                    obj.gameObject.tag = "friends";
+                    target.gameObject.tag = "friends";
                     spwnd = true;
                     spawned = true;
                 } else if(last == 2){
                     GameObject obj = Instantiate(childMale, placementIndicator.transform.position, placementIndicator.transform.rotation);
                     knownText.text = "He is not your Friend";
                     target = obj;
-                    obj.gameObject.tag = "stranger";
+                    target.gameObject.tag = "stranger";
                     spwnd = true;
-                    spawned = true;
+                    spawned = true;  
                 } else if(last == 3){
                     GameObject obj = Instantiate(childFemale, placementIndicator.transform.position, placementIndicator.transform.rotation);
                     knownText.text = "She is your Friend";
                     target = obj;
-                    obj.gameObject.tag = "friends";
+                    target.gameObject.tag = "friends";
                     spwnd = true;
                     spawned = true;
                 } else if(last == 4){
                     GameObject obj = Instantiate(childFemale, placementIndicator.transform.position, placementIndicator.transform.rotation);
                     knownText.text = "She is not your Friend";
                     target = obj;
-                    obj.gameObject.tag = "stranger";
+                    target.gameObject.tag = "stranger";
                     spwnd = true;
                     spawned = true;
                 }
@@ -105,11 +105,11 @@ public class ObjectSpawner : MonoBehaviour
             }
         } else{
             Debug.Log("spawned == true");
-        }        
+        }
+        
     }
 
     public void submitDistance(){
-        
         if(target.gameObject.tag == "friends" && distanceF >= 4.0f && distanceF <= 8.0f){
             points = points + 10;
             Destroy(target.gameObject);

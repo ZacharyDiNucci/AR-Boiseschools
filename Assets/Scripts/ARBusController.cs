@@ -101,9 +101,6 @@ public class ARBusController : MonoBehaviour
         Debug.Log(busCounter);
     }
 
-
-
-
     public void placeObject(){
         if (spawned != true){
             obj = Instantiate(BusController, placementIndicator.transform.position, placementIndicator.transform.rotation);
