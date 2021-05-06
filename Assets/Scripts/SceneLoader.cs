@@ -2,74 +2,77 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class SceneLoader : MonoBehaviour
 {
-    public GameObject currentScene;
-    public GameObject previousScene;
-    
-    protected static int startPage = 0;
-    public int ARScene1;
-    public int ARScene2;
-    public int ARScene3;
+    [SerializeField] private List<GameObject> pages;
+    private string previousPage;
 
-    public GameObject titlePanel;
-    public GameObject arPanel;
-    public GameObject arDescPanel1;
-    public GameObject arDescPanel2;
-    public GameObject arDescPanel3;
+    [SerializeField] private VideoPlayer video;
 
-    void OnEnable(){
-        GameObject[] pages ={titlePanel, arPanel, arDescPanel1, arDescPanel2, arDescPanel3};
-        currentScene = previousScene = pages[startPage];
-        currentScene.SetActive(true);
+    [SerializeField] private AudioClip click;
+    private AudioSource source;
+
+    private void Start() {
+        source = GetComponent<AudioSource>();
     }
 
-    public void UpdateMenu(string scene){
-        previousScene = currentScene;
-        string[] types = scene.Split('-');
-        switch (types[0]) {
-            default:
-                currentScene = titlePanel;
+    public void UpdateMenu(string name){
+        source.Stop();
+        source.PlayOneShot(click);
 
-                break;
-            case "Login":
-                currentScene = titlePanel;
-                break;
-            case "AR":
-                currentScene = arPanel;
-                break;
-            case "ARDescPanel1":
-                currentScene = arDescPanel1;
-                break;
-            case "ARDescPanel2":
-                currentScene = arDescPanel2;
-                break;
-            case "ARDescPanel3":
-                currentScene = arDescPanel3;
-                break;
-            case "ARGame1":
-                SceneManager.LoadScene(ARScene1);
-                break;
-            case "ARGame2":
-                SceneManager.LoadScene(ARScene2);
-                break;
-            case "ARGame3":
-                SceneManager.LoadScene(ARScene3);
-                break;
+        foreach (GameObject g in pages) {
+            if (g.name == name) {
+                g.SetActive(true);
+            }
+            else {
+                g.SetActive(false);
+            }
         }
-        currentScene.SetActive(true);
-        previousScene.SetActive(false);
     }
-    /*public void LoadScene1(){
-        Debug.Log("Click");
-        SceneManager.LoadScene(ARScene1);
+
+    public void SwitchScene(int scene) {
+        SceneManager.LoadScene(scene);
     }
-    public void LoadScene2(){
-        SceneManager.LoadScene(ARScene2);
+
+    public void EnterSettings(string name) {
+        source.Stop();
+        source.PlayOneShot(click);
+
+        previousPage = name;
+
+        foreach (GameObject g in pages) {
+            if (g.name == "Settings") {
+                g.SetActive(true);
+            }
+            else {
+                g.SetActive(false);
+            }
+        }
+
+
     }
-    public void LoadScene3(){
-        SceneManager.LoadScene(ARScene3);
-    }*/
+
+    public void LeaveSettings() {
+        source.Stop();
+        source.PlayOneShot(click);
+
+        foreach (GameObject g in pages) {
+            if (g.name == previousPage) {
+                g.SetActive(true);
+            }
+            else {
+                g.SetActive(false);
+            }
+        }
+    }
+
+    public void ReadDescription(AudioClip clip) {
+        source.PlayOneShot(clip);
+    }
+
+    public void ChangeVideoClip(VideoClip clip) {
+        video.clip = clip;
+    }
 }
