@@ -105,7 +105,7 @@ public class ARRestController : MonoBehaviour
             spawned = true;
             Table = this.obj.transform.Find("Table").gameObject;
             Zone1 = this.obj.transform.Find("Zone1").gameObject;
-            WaiterF = this.obj.transform.Find("SimpleChildF").gameObject;
+            WaiterF = this.obj.transform.Find("Waiter").gameObject;
             Food = this.obj.transform.Find("Food").gameObject;
             NapkinW = this.obj.transform.Find("NapkinW").gameObject;
             NapkinU = this.obj.transform.Find("NapkinU").gameObject;

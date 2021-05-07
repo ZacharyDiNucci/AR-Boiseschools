@@ -72,6 +72,7 @@ public class ObjectSpawner : MonoBehaviour
                 Debug.Log(last.ToString());
                 if(last == 1){
                     GameObject obj = Instantiate(childMale, placementIndicator.transform.position, placementIndicator.transform.rotation);
+                    obj.transform.Rotate(0f, 180.0f, 0.0f, Space.World);
                     knownText.text = "He is your Friend";
                     target = obj;
                     target.gameObject.tag = "friends";
@@ -79,6 +80,7 @@ public class ObjectSpawner : MonoBehaviour
                     spawned = true;
                 } else if(last == 2){
                     GameObject obj = Instantiate(childMale, placementIndicator.transform.position, placementIndicator.transform.rotation);
+                    obj.transform.Rotate(0f, 180.0f, 0.0f, Space.World);
                     knownText.text = "He is not your Friend";
                     target = obj;
                     target.gameObject.tag = "stranger";
@@ -86,6 +88,7 @@ public class ObjectSpawner : MonoBehaviour
                     spawned = true;  
                 } else if(last == 3){
                     GameObject obj = Instantiate(childFemale, placementIndicator.transform.position, placementIndicator.transform.rotation);
+                    obj.transform.Rotate(0f, 180.0f, 0.0f, Space.World);
                     knownText.text = "She is your Friend";
                     target = obj;
                     target.gameObject.tag = "friends";
@@ -93,6 +96,7 @@ public class ObjectSpawner : MonoBehaviour
                     spawned = true;
                 } else if(last == 4){
                     GameObject obj = Instantiate(childFemale, placementIndicator.transform.position, placementIndicator.transform.rotation);
+                    obj.transform.Rotate(0f, 180.0f, 0.0f, Space.World);
                     knownText.text = "She is not your Friend";
                     target = obj;
                     target.gameObject.tag = "stranger";
